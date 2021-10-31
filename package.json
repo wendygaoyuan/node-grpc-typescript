@@ -1,0 +1,30 @@
+{
+  "name": "node-grpc-typescript",
+  "version": "0.1.0",
+  "description": "Node.js gRPC for TypeScript example",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "ts-node-dev ./src/grpc-server",
+    "start:client": "ts-node ./src/grpc-client",
+    "build": "rimraf dist && tsc",
+    "build:proto": "bash generate.sh",
+    "prod:server": "node dist/grpc-client",
+    "prod:client": "node dist/grpc-client"
+  },
+  "author": "wendygaoyuan@163.com",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@grpc/grpc-js": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "grpc-tools": "^1.11.2",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "ts-protoc-gen": "^0.15.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.4"
+  }
+}

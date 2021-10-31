@@ -1,0 +1,24 @@
+syntax = "proto3";
+package server;
+
+// ------------- 用户服务 ------------ //
+
+service User {
+  rpc FindAll(FindAllReq) returns (FindAllRes) {}
+}
+
+message UserInfo {
+  int32 uid = 1;
+  string name = 2;
+  string avatar = 3;
+}
+
+message FindAllReq {
+  int32 limit = 1;
+}
+
+message FindAllRes {
+  int32             code = 1;
+  string            msg  = 2;
+  repeated UserInfo data = 3;
+}
