@@ -1,5 +1,5 @@
-// package: server
-// file: user.proto
+// package: example
+// file: simple.proto
 
 import * as jspb from "google-protobuf";
 
@@ -31,27 +31,27 @@ export namespace UserInfo {
   }
 }
 
-export class FindAllReq extends jspb.Message {
+export class FindListReq extends jspb.Message {
   getLimit(): number;
   setLimit(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FindAllReq.AsObject;
-  static toObject(includeInstance: boolean, msg: FindAllReq): FindAllReq.AsObject;
+  toObject(includeInstance?: boolean): FindListReq.AsObject;
+  static toObject(includeInstance: boolean, msg: FindListReq): FindListReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FindAllReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FindAllReq;
-  static deserializeBinaryFromReader(message: FindAllReq, reader: jspb.BinaryReader): FindAllReq;
+  static serializeBinaryToWriter(message: FindListReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FindListReq;
+  static deserializeBinaryFromReader(message: FindListReq, reader: jspb.BinaryReader): FindListReq;
 }
 
-export namespace FindAllReq {
+export namespace FindListReq {
   export type AsObject = {
     limit: number,
   }
 }
 
-export class FindAllRes extends jspb.Message {
+export class FindListRes extends jspb.Message {
   getCode(): number;
   setCode(value: number): void;
 
@@ -64,16 +64,16 @@ export class FindAllRes extends jspb.Message {
   addData(value?: UserInfo, index?: number): UserInfo;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FindAllRes.AsObject;
-  static toObject(includeInstance: boolean, msg: FindAllRes): FindAllRes.AsObject;
+  toObject(includeInstance?: boolean): FindListRes.AsObject;
+  static toObject(includeInstance: boolean, msg: FindListRes): FindListRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FindAllRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FindAllRes;
-  static deserializeBinaryFromReader(message: FindAllRes, reader: jspb.BinaryReader): FindAllRes;
+  static serializeBinaryToWriter(message: FindListRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FindListRes;
+  static deserializeBinaryFromReader(message: FindListRes, reader: jspb.BinaryReader): FindListRes;
 }
 
-export namespace FindAllRes {
+export namespace FindListRes {
   export type AsObject = {
     code: number,
     msg: string,

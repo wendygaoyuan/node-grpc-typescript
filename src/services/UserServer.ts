@@ -1,12 +1,12 @@
 import * as grpc from '@grpc/grpc-js'
-import { FindAllReq, FindAllRes, UserInfo } from '../../grpc/user_pb'
-import { IUserServer } from '../../grpc/user_grpc_pb'
+import { FindListReq, FindListRes, UserInfo } from '../../grpc/simple_pb'
+import { IUserServer } from '../../grpc/simple_grpc_pb'
 
 class Server implements IUserServer {
     [method: string]: grpc.UntypedHandleCall
-    public findAll(call: grpc.ServerUnaryCall<FindAllReq, FindAllRes>, callback: grpc.sendUnaryData<FindAllRes>): void {
-        const data: FindAllReq.AsObject = call.request.toObject()
-        console.log('FindAllReq:', data)
+    public findList(call: grpc.ServerUnaryCall<FindListReq, FindListRes>, callback: grpc.sendUnaryData<FindListRes>): void {
+        const data: FindListReq.AsObject = call.request.toObject()
+        console.log('FindListReq:', data)
 
         let userList: Array<UserInfo> = []
         for (let index = 0; index < data.limit; index++) {
@@ -18,7 +18,7 @@ class Server implements IUserServer {
             userList.push(user)
         }
 
-        const res = new FindAllRes()
+        const res = new FindListRes()
         res.setCode(200)
         res.setMsg('用户数据获取成功')
         res.setDataList(userList)

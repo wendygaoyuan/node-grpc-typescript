@@ -1,5 +1,5 @@
 import { Server, ServerCredentials } from '@grpc/grpc-js'
-import { UserService } from '../grpc/user_grpc_pb'
+import { UserService } from '../grpc/simple_grpc_pb'
 import { Server as UserServer } from './services/UserServer'
 
 function startServer() {
